@@ -16,16 +16,16 @@
 
 .content-wrapper {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
 }
 
 .header-container {
-  max-width: 80rem;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  padding: 0px 50px;
 }
 
 body {
@@ -36,4 +36,51 @@ body {
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.custom-antd-head-dark .ant-table-thead > tr > th {
+  background: var(--clr-dark-primary);
+  color: #ffff;
+  border-color: #2f2f2f !important;
+  border: 1px solid #2f2f2f;
+}
+.custom-antd-head-dark .ant-table.ant-table-bordered > .ant-table-container {
+  border-color: #2f2f2f !important;
+}
+.custom-antd-head-dark
+  .ant-table.ant-table-bordered
+  > .ant-table-container
+  > .ant-table-content
+  > table,
+.ant-table.ant-table-bordered
+  > .ant-table-container
+  > .ant-table-header
+  > table {
+  border-color: #2f2f2f !important;
+}
+
+.ant-tab-expand .custom-antd-head-dark .ant-table-tbody > tr > td:nth-child(2) {
+  background: #1e1e1e;
+}
+.ant-tab-expand > .custom-antd-head-dark > .ant-table-tbody > tr > td {
+  background: #1e1e1e !important;
+}
+
+.ant-tab-expand .ant-table-tbody > tr > td {
+  transition: none;
+}
+.ant-tab-expand .custom-antd-head-dark tr.ant-table-expanded-row > td {
+  background: #292e3f;
+}
+
+.custom-antd-head-dark .ant-table-container {
+  background-color: #1e1e1e;
+}
+
+.custom-antd-head-dark .ant-table-thead > tr > th {
+  padding: 7px 10px;
+}
+
+.custom-antd-head-dark .ant-table-thead > tr > th > p {
+  margin: 0;
 }

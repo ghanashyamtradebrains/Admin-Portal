@@ -6,11 +6,6 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/page.js"
-    ],
     "/premium-support/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -36,70 +31,21 @@
       "static/chunks/main-app.js",
       "static/chunks/app/superstar/page.js"
     ],
-    "/feedback/page": [
+    "/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/feedback/page.js"
-    ],
-    "/notifications/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/notifications/page.js"
+      "static/chunks/app/dashboard/page.js"
     ],
     "/user-management/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/user-management/page.js"
     ],
-    "/stock-details/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/stock-details/page.js"
-    ],
-    "/buckets/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/buckets/page.js"
-    ],
-    "/affiliate/approvals/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/affiliate/approvals/page.js"
-    ],
-    "/affiliate/sign-ups/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/affiliate/sign-ups/page.js"
-    ],
-    "/affiliate/all-affiliate/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/affiliate/all-affiliate/page.js"
-    ],
-    "/affiliate/sales-performance/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/affiliate/sales-performance/page.js"
-    ],
-    "/affiliate/payout-details/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/affiliate/payout-details/page.js"
-    ],
-    "/affiliate/reports/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/affiliate/reports/page.js"
-    ],
-    "/affiliate/promotions/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/affiliate/promotions/page.js"
-    ],
-    "/affiliate/help-center/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/affiliate/help-center/page.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/not-found": [
       "static/chunks/webpack.js",

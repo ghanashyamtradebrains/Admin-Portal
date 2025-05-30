@@ -1,12 +1,6 @@
 {
   "/not-found": "app/not-found.js",
-  "/dashboard/page": "app/dashboard/page.js",
   "/premium-support/page": "app/premium-support/page.js",
-  "/buckets/page": "app/buckets/page.js",
-  "/affiliate/all-affiliate/page": "app/affiliate/all-affiliate/page.js",
-  "/affiliate/sales-performance/page": "app/affiliate/sales-performance/page.js",
-  "/affiliate/payout-details/page": "app/affiliate/payout-details/page.js",
-  "/affiliate/reports/page": "app/affiliate/reports/page.js",
-  "/affiliate/promotions/page": "app/affiliate/promotions/page.js",
-  "/affiliate/help-center/page": "app/affiliate/help-center/page.js"
+  "/transaction/page": "app/transaction/page.js",
+  "/dashboard/page": "app/dashboard/page.js"
 }
