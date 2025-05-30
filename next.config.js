@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
 
-module.exports = nextConfig
+module.exports = {
+  reactStrictMode: true,
+  env: {
+    NEXT_APP_BASE_URL: "https://portal.tradebrains.in/api/",
+  },
+  async headers() {
+    return [];
+  },
+  images: {
+    domains: [],
+  },
+};
