@@ -28,6 +28,26 @@
   padding: 0px 50px;
 }
 
+.w-100 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.pb-30 {
+  padding-bottom: 30px !important;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -83,4 +103,155 @@ body {
 
 .custom-antd-head-dark .ant-table-thead > tr > th > p {
   margin: 0;
+}
+
+.DatePicker-Antd-Dark {
+  background-color: #2f2f2f !important;
+  border: 1px solid #2f2f2f;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.DatePicker-Antd-Dark :focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.DatePicker-Antd-Dark
+  > .ant-picker-input
+  > input[placeholder="Start date"]::placeholder {
+  color: #999;
+}
+
+.DatePicker-Antd-Dark
+  > .ant-picker-input
+  > input[placeholder="End date"]::placeholder {
+  color: #999;
+}
+
+.DatePicker-Antd-Dark > .ant-picker-input > span {
+  color: white;
+  background: #292e3f !important;
+}
+
+.DatePicker-Antd-Dark > .ant-picker-clear > span {
+  background-color: #292e3f !important;
+  color: white;
+}
+
+.index-page-pagination > .ant-pagination {
+  color: white;
+}
+.index-page-pagination > .ant-pagination > .ant-pagination-item-active {
+  background: #3b3f4f !important;
+  border: none;
+}
+.index-page-pagination
+  > .ant-pagination
+  > .ant-pagination-options
+  > .ant-pagination-options-quick-jumper
+  > input {
+  background: #292e3f !important;
+  color: white;
+  border: 1px solid #545e78;
+}
+.index-page-pagination
+  > .ant-pagination
+  > .ant-pagination-options
+  > .ant-pagination-options-size-changer
+  > .ant-select-selector {
+  background-color: #292e3f !important;
+  color: white;
+}
+
+.index-page-pagination .ant-pagination .ant-pagination-item:hover {
+  background-color: white !important;
+}
+.index-page-pagination
+  > .ant-pagination
+  > .ant-pagination-next
+  > .ant-pagination-item-link {
+  color: white;
+}
+.index-page-pagination
+  > .ant-pagination
+  > .ant-pagination-prev
+  > .ant-pagination-item-link {
+  color: white;
+}
+
+.antd-Selete-Custom-dark {
+  color: white !important;
+  background-color: #292e3f !important  ;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+.antd-Selete-Custom-dark > div > span {
+  color: white !important;
+}
+
+:where(.css-dev-only-do-not-override-5uvb3z).ant-select-outlined:not(
+    .ant-select-customize-input
+  )
+  .ant-select-selector {
+  border: none;
+  background: #2f2f2f !important;
+}
+
+.dark-input-login > div {
+  padding: 0px !important;
+}
+.dark-input-login > div > label {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.dark-input-login .ant-input-group > .ant-input:last-child,
+.ant-input-group-addon:last-child {
+  color: #fff !important;
+  background: transparent !important;
+  border: inherit !important;
+}
+.dark-input-login > div > div > div > span > span > span,
+.dark-input-login > div > div > div > span > span > input {
+  color: white;
+  height: 100% !important;
+}
+
+.dark-input-login > div > div > div > span > span,
+.light-input-login > div > div > div > span > span {
+  height: 100% !important;
+}
+
+.dark-input-login
+  .ant-input-status-error:not(.ant-input-disabled):not(
+    .ant-input-borderless
+  ).ant-input {
+  background: var(--clr-dark-secondary) !important;
+  color: white;
+}
+
+.contact-select-dark > span {
+  color: white !important;
+  /* background: var(--clr-dark-secondary) !important  ; */
+}
+.contact-select-dark > div > span {
+  color: white !important;
+}
+.contact-select-dark:placeholder-shown {
+  color: #f2f6f8 !important;
+}
+.contact-select-dark > div {
+  height: 40px !important;
+  background-color: transparent !important;
+}
+
+.modal-bg-custom .ant-modal-content {
+  background-color: #1e1e1e !important;
+  color: white;
+  border-radius: 8px;
+}
+
+.modal-bg-custom .ant-modal-content > button {
+  color: white;
 }

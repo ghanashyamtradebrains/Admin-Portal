@@ -1,0 +1,15 @@
+.flex_end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.buttons {
+  height: 40px;
+  padding: 10px;
+  background-color: #2f2f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

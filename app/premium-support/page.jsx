@@ -18,6 +18,7 @@ function PremiumSupport() {
   });
   const [Page, setPage] = useState({ page: 1, perPage: 10 });
   const dateFormate = ["DD MMM YYYY"];
+  const [input, setinput] = useState();
 
   const getColor = (expr) => {
     if (expr === "new") {
@@ -59,210 +60,121 @@ function PremiumSupport() {
     setPage({ page: page, perPage: perPage });
   };
 
+  const baseCellStyle = {
+    background: "#1e1e1e",
+    borderRight: "1px solid #2f2f2f",
+    borderLeft: "1px solid #2f2f2f",
+    borderBottom: "none",
+  };
+
+  const baseTextStyle = {
+    fontSize: "14px",
+    fontWeight: "400",
+    color: "white",
+  };
+
+  const renderCell = (
+    text,
+    customStyle = {},
+    extraClasses = "",
+    onClick = null
+  ) => ({
+    props: { style: baseCellStyle },
+    children: (
+      <span
+        onClick={onClick}
+        className={`ff-lato ${extraClasses} ${
+          onClick ? "pointer link-hover-underline" : ""
+        }`}
+        style={{ ...baseTextStyle, ...customStyle }}
+      >
+        {text}
+      </span>
+    ),
+  });
+
   const columns = [
     {
-      title: <span className="">User Name</span>,
+      title: <span>User Name</span>,
       dataIndex: "name",
       fixed: "left",
       width: "40px",
-      render(text, record) {
-        return {
-          props: {
-            style: {
-              background: "#1e1e1e",
-              borderRight: "1px solid #2f2f2f",
-              borderLeft: "1px solid #2f2f2f",
-              borderBottom: "none",
-            },
-          },
-          children: (
-            <span
-              onClick={() => navigate(`${1}`, { state: record })}
-              className="ff-lato pointer link-hover-underline"
-              style={{
-                fontSize: "14px",
-                fontWeight: "400",
-                color: "white",
-              }}
-            >
-              {text}
-            </span>
-          ),
-        };
-      },
+      render: (text, record) =>
+        renderCell(text, {}, "", () => navigate(`${1}`, { state: record })),
     },
     {
-      title: <p className="">Email ID</p>,
+      title: <p>Email ID</p>,
       dataIndex: "email",
       width: "50px",
-      render(text, record) {
-        return {
-          props: {
-            style: {
-              background: "#1e1e1e",
-              borderRight: "1px solid #2f2f2f",
-              borderLeft: "1px solid #2f2f2f",
-              borderBottom: "none",
-            },
-          },
-          children: (
-            <span
-              className="ff-lato "
-              style={{
-                fontSize: "14px",
-                fontWeight: "400",
-                color: "white",
-              }}
-            >
-              {text}
-            </span>
-          ),
-        };
-      },
+      render: (text) => renderCell(text),
     },
-
     {
-      title: <p className="">Message</p>,
-      width: "50px",
+      title: <p>Message</p>,
       dataIndex: "message",
-      render(text, record) {
-        return {
-          props: {
-            style: {
-              background: "#1e1e1e",
-              borderRight: "1px solid #2f2f2f",
-              borderLeft: "1px solid #2f2f2f",
-              borderBottom: "none",
-            },
-          },
-
-          children: (
-            <span
-              className="ff-lato"
-              style={{
-                color: "white",
-
-                fontSize: "14px",
-                fontWeight: "400",
-              }}
-            >
-              {text && text}
-            </span>
-          ),
-        };
-      },
+      width: "50px",
+      render: (text) => renderCell(text || ""),
     },
     {
-      title: <p className="">Date</p>,
-      width: "50px",
+      title: <p>Date</p>,
       dataIndex: "created_at",
-      render(text, record) {
-        return {
-          props: {
-            style: {
-              background: "#1e1e1e",
-              borderRight: "1px solid #2f2f2f",
-              borderLeft: "1px solid #2f2f2f",
-              borderBottom: "none",
-            },
-          },
-
-          children: (
-            <span
-              className="ff-lato"
-              style={{
-                color: "white",
-
-                fontSize: "14px",
-                fontWeight: "400",
-              }}
-            >
-              {moment(text).format(dateFormate[0])}
-            </span>
-          ),
-        };
-      },
+      width: "50px",
+      render: (text) => renderCell(moment(text).format(dateFormate[0])),
     },
     {
-      title: <p className="">Status</p>,
-      width: "50px",
+      title: <p>Status</p>,
       dataIndex: "status",
-      render(text, record) {
-        return {
-          props: {
-            style: {
-              background: "#1e1e1e",
-              borderRight: "1px solid #2f2f2f",
-              borderLeft: "1px solid #2f2f2f",
-              borderBottom: "none",
-            },
-          },
-
-          children: (
-            <span
-              className="ff-lato Textcapitalize"
-              style={{
-                color: getColor(text),
-
-                fontSize: "14px",
-                fontWeight: "400",
-              }}
-            >
-              {text && text === "open" ? "Open" : text}
-            </span>
-          ),
-        };
-      },
+      width: "50px",
+      render: (text) =>
+        renderCell(
+          text === "open" ? "Open" : text,
+          { color: getColor(text) },
+          "Textcapitalize"
+        ),
     },
     {
-      title: <p className="">Action</p>,
-      width: "50px",
+      title: <p>Action</p>,
       dataIndex: "",
-      render(text, data) {
-        return {
-          props: {
-            style: {
-              background: "#1e1e1e",
-              borderRight: "1px solid #2f2f2f",
-              borderLeft: "1px solid #2f2f2f",
-              borderBottom: "none",
-            },
-          },
-
-          children: (
-            <span
-              className="ff-lato Textcapitalize"
-              style={{
-                color: getColor(text),
-
-                fontSize: "14px",
-                fontWeight: "400",
+      width: "50px",
+      render: (_, data) =>
+        renderCell(
+          data?.status !== "closed" ? (
+            <div
+              onClick={() => {
+                setModalIsOpen({ state: true, id: data.id });
+                console.log("clicked", data);
               }}
+              className="pointer"
             >
-              {data?.status !== "closed" ? (
-                <div
-                  onClick={() => {
-                    setModalIsOpen({ state: true, id: data.id });
-                    console.log("clicked", data);
-                  }}
-                  className="pointer "
-                >
-                  Close Query
-                </div>
-              ) : (
-                <div>Already Closed</div>
-              )}
-            </span>
+              Close Query
+            </div>
+          ) : (
+            "Already Closed"
           ),
-        };
-      },
+          { color: getColor(data?.status) },
+          "Textcapitalize"
+        ),
     },
   ];
 
   return (
     <ProtectedRoute>
       <div className="">
-        <div className={`table-shadow mt-30 ${"custom-antd-head-dark"}`}>
+        <div className={styles.flex_search_date}>
+          <input
+            style={{ width: "20%", color: "white" }}
+            placeholder="Search By Email"
+            value={input}
+            onChange={(e) => setFilter({ ...Filter, search: e.target.value })}
+            type="text"
+            className={styles.input_search}
+          ></input>
+          <RangePicker
+            dropdownClassName={"DatePickerdropdrow-Antd-Dark"}
+            className={"DatePicker-Antd-Dark"}
+            onChange={onChange}
+          />
+        </div>
+        <div className={` ${"custom-antd-head-dark"}`}>
           <CustomTable data={tableData?.results} columns={columns} />
           <CustomPagination
             current={Page.page}

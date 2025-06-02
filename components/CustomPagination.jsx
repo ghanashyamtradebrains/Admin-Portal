@@ -11,7 +11,7 @@ function CustomPagination({
 }) {
   return (
     <div
-      className={`${"index-page-pagination"} w-100 d-flex  justify-content-end mt-10`}
+      className={`${"index-page-pagination"} w-100 d-flex  justify-content-end mt-10 pb-30`}
     >
       <Pagination
         current={current}

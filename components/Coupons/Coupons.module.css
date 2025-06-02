@@ -1,0 +1,75 @@
+.input_search {
+  height: 35px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2f2f2f;
+}
+
+.input_search:focus {
+  outline: none;
+}
+.input_search::placeholder {
+  padding: 20px;
+}
+
+.flex_row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.flex_row {
+  display: flex;
+  gap: 20px !important;
+  width: 100%;
+}
+
+.w_50 {
+  flex: 0 0 48%;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 0px;
+  margin: 6px 0 16px;
+  border-radius: 5px;
+  border: 1px solid #1e1e1e;
+  background-color: #2f2f2f;
+  color: white;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px 0px;
+  margin: 6px 0 16px;
+  height: 150px;
+  border-radius: 5px;
+  border: 1px solid #1e1e1e;
+  resize: none;
+  background-color: #2f2f2f;
+  color: white;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.btnPrimary {
+  background-color: #2f2f2f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create_coupon {
+  background-color: #1e1e1e;
+  color: white;
+}

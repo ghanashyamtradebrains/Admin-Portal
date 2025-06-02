@@ -1,6 +1,6 @@
 {
-  "/not-found": "app/not-found.js",
+  "/dashboard/page": "app/dashboard/page.js",
   "/premium-support/page": "app/premium-support/page.js",
   "/transaction/page": "app/transaction/page.js",
-  "/dashboard/page": "app/dashboard/page.js"
+  "/coupons/page": "app/coupons/page.js"
 }
