@@ -1,13 +1,10 @@
 import styles from "./page.module.css";
 import LoginForm from "./login";
-import Cookies from "js-cookie";
+import cookie from "js-cookie";
 import { redirect } from "next/navigation";
-import ClientRedirect from "./utility/client-redirect";
 
 export default function Home() {
-  // const cookieStore = Cookies();
-  // const accessToken = cookieStore.get("ptl_access_token");
-  const accessToken = "HHHH";
+  const accessToken = cookie.get("ptl_access_token");
   if (accessToken) {
     redirect("/dashboard");
   }

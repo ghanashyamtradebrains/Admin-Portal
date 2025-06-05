@@ -17,11 +17,34 @@
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/page.js"
     ],
+    "/user-list/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/user-list/page.js"
+    ],
     "/premium-support/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/premium-support/page.css",
       "static/chunks/app/premium-support/page.js"
+    ],
+    "/superstar/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/superstar/page.css",
+      "static/chunks/app/superstar/page.js"
+    ],
+    "/superstar/edit/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/superstar/edit/[id]/page.css",
+      "static/chunks/app/superstar/edit/[id]/page.js"
+    ],
+    "/coupons/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/coupons/page.css",
+      "static/chunks/app/coupons/page.js"
     ],
     "/transaction/page": [
       "static/chunks/webpack.js",
@@ -29,11 +52,31 @@
       "static/css/app/transaction/page.css",
       "static/chunks/app/transaction/page.js"
     ],
-    "/coupons/page": [
+    "/feedback/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/coupons/page.css",
-      "static/chunks/app/coupons/page.js"
+      "static/css/app/feedback/page.css",
+      "static/chunks/app/feedback/page.js"
+    ],
+    "/notifications/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/notifications/page.js"
+    ],
+    "/user-management/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/user-management/page.js"
+    ],
+    "/stock-details/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/stock-details/page.js"
+    ],
+    "/buckets/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/buckets/page.js"
     ]
   }
 }

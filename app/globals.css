@@ -255,3 +255,42 @@ body {
 .modal-bg-custom .ant-modal-content > button {
   color: white;
 }
+
+.ant-form .ant-form-item .ant-row .ant-col > label {
+  color: white !important;
+}
+
+.ant-form
+  .ant-form-item
+  .ant-row
+  .ant-form-item-control-input
+  .ant-form-item-control-input-content
+  > input {
+  background-color: #2f2f2f !important;
+  border: none !important;
+  color: white;
+}
+
+.ant-form
+  .ant-form-item
+  .ant-row
+  .ant-form-item-control-input
+  .ant-form-item-control-input-content
+  > textarea {
+  background-color: #2f2f2f !important;
+  border: none !important;
+  color: white !important;
+}
+
+.ant-form
+  .ant-form-item
+  .ant-row
+  .ant-form-item-control-input
+  .ant-form-item-control-input-content
+  > span {
+  background-color: #2f2f2f !important;
+  border: none !important;
+  color: white !important;
+}
+
+/* .ant-upload-list .ant-upload-list-item-container .ant-upload-list-item */

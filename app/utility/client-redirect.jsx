@@ -2,16 +2,14 @@
 "use client";
 
 import { useEffect } from "react";
-import Cookies from "js-cookie";
+import cookie from "js-cookie";
 import { useRouter } from "next/navigation";
 
 export default function ProtectedRoute({ children }) {
   const router = useRouter();
-
+  const accessToken = cookie.get("ptl_access_token");
   useEffect(() => {
-    const token = "HHHH";
-
-    if (!token) {
+    if (!accessToken) {
       router.replace("/");
     }
   }, [router]);

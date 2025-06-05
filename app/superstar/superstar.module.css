@@ -1,0 +1,30 @@
+.input_search {
+  height: 35px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2f2f2f;
+}
+
+.input_search:focus {
+  outline: none;
+}
+.input_search::placeholder {
+  padding: 20px;
+}
+
+.flex_search_create {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.createSuperstarButton {
+  background-color: #2f2f2f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}

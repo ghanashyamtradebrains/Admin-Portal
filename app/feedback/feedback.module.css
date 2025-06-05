@@ -1,0 +1,14 @@
+.input_search {
+  height: 35px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2f2f2f;
+}
+
+.input_search:focus {
+  outline: none;
+}
+.input_search::placeholder {
+  padding: 20px;
+}

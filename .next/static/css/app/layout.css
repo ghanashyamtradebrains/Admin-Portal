@@ -165,6 +165,19 @@
   font-weight: 500;
 }
 
+.Header_image_container__LRLrE {
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./app/globals.css ***!
   \*************************************************************************************************************************************************************************************************************************************************************/
@@ -425,6 +438,45 @@ body {
 .modal-bg-custom .ant-modal-content > button {
   color: white;
 }
+
+.ant-form .ant-form-item .ant-row .ant-col > label {
+  color: white !important;
+}
+
+.ant-form
+  .ant-form-item
+  .ant-row
+  .ant-form-item-control-input
+  .ant-form-item-control-input-content
+  > input {
+  background-color: #2f2f2f !important;
+  border: none !important;
+  color: white;
+}
+
+.ant-form
+  .ant-form-item
+  .ant-row
+  .ant-form-item-control-input
+  .ant-form-item-control-input-content
+  > textarea {
+  background-color: #2f2f2f !important;
+  border: none !important;
+  color: white !important;
+}
+
+.ant-form
+  .ant-form-item
+  .ant-row
+  .ant-form-item-control-input
+  .ant-form-item-control-input-content
+  > span {
+  background-color: #2f2f2f !important;
+  border: none !important;
+  color: white !important;
+}
+
+/* .ant-upload-list .ant-upload-list-item-container .ant-upload-list-item */
 
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[12].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.js","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!

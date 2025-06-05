@@ -99,8 +99,7 @@ function PremiumSupport() {
       dataIndex: "name",
       fixed: "left",
       width: "40px",
-      render: (text, record) =>
-        renderCell(text, {}, "", () => navigate(`${1}`, { state: record })),
+      render: (text, record) => renderCell(text),
     },
     {
       title: <p>Email ID</p>,

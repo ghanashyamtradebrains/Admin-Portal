@@ -1,4 +1,5 @@
-import { get } from "./MainClient";
+import { authPost } from "./authClient";
+import { get, post, put } from "./MainClient";
 
 export const getSearchData = async (input) => {
   const searchResp = await get(`company/search/portal/`).then((resp) => {
@@ -83,4 +84,58 @@ export const deleteCoupon = async (id) => {
     return resp;
   });
   return response;
+};
+
+export const getAdminSuperStar = (searchInput) => {
+  const response = get(
+    `prices/admin/superstars/list/${
+      searchInput ? `?search=${searchInput}` : ""
+    }`
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const addAdminStarCreate = async (data) => {
+  const response = await post(`prices/admin/superstars/create/`, data).then(
+    (resp) => {
+      return resp;
+    }
+  );
+  return response;
+};
+
+export const getAdminSuperStarEdit = (id) => {
+  const response = get(
+    `prices/admin/superstars/data/?investor_code=${id}`
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const putStarPortfolioNew = async (id, data) => {
+  const response = await put(`prices/admin/superstars/edit/${id}`, data).then(
+    (resp) => {
+      return resp;
+    }
+  );
+  return response;
+};
+
+export const getFeedbackDataAdmin = async (search, page) => {
+  const response = await get(
+    `contact/admin/user-testimonial-report/?search=${search}&page=${page}`
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const postLoginData = async (data) => {
+  const loginResp = await authPost(`rest-auth/login/`, data).then((resp) => {
+    return resp;
+  });
+  return loginResp;
 };
