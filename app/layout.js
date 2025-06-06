@@ -2,6 +2,8 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import StoreProvider from "./StoreProvider";
 import AuthLayout from "./AuthLayout";
+// import PageLoader from "@/components/Loader/PageLoader";
+import ViewTransitionWrapper from "@/components/Loader/ViewTransitionWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <StoreProvider>
-          <AuthLayout>{children}</AuthLayout>
+          <ViewTransitionWrapper>
+            <AuthLayout>{children}</AuthLayout>
+          </ViewTransitionWrapper>
         </StoreProvider>
       </body>
     </html>

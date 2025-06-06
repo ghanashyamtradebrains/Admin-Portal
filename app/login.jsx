@@ -90,7 +90,7 @@ function Login() {
                 type="text"
                 //   height={"50px"}
                 style={{ height: "40px" }}
-                className={`w-100 bg-dark-gray email-input-login-page
+                className={`
                           auth-form-input`}
                 placeholder="Email"
               />
@@ -108,8 +108,6 @@ function Login() {
               <Input.Password
                 type="text"
                 style={{ height: "40px" }}
-                className={`w-100 h-40px auth-form-input bg-dark-gray input-password-login-dark
-                          `}
                 placeholder="Enter Password"
               />
             </Form.Item>
@@ -120,12 +118,7 @@ function Login() {
             )}
 
             {apiLoader ? (
-              <div
-                style={{ margin: "6px 0px" }}
-                className="w-100 btn-bg-primary  h-40 py-10 br-5 text-white center"
-              >
-                Logging in....
-              </div>
+              <button className={styles.login_button}>Logging in....</button>
             ) : (
               <button type="submit" className={styles.login_button}>
                 Login

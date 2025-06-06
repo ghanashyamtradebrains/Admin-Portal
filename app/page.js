@@ -1,12 +1,14 @@
+"use client";
 import styles from "./page.module.css";
 import LoginForm from "./login";
 import cookie from "js-cookie";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const accessToken = cookie.get("ptl_access_token");
   if (accessToken) {
-    redirect("/dashboard");
+    router.push("/dashboard");
   }
   return (
     <main className={styles.main}>

@@ -293,4 +293,43 @@ body {
   color: white !important;
 }
 
-/* .ant-upload-list .ant-upload-list-item-container .ant-upload-list-item */
+:where(.css-dev-only-do-not-override-5uvb3z).ant-form-item
+  .ant-form-item-label {
+  flex-grow: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: start;
+  vertical-align: middle;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

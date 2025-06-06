@@ -12,6 +12,7 @@ function Header() {
   const pathname = usePathname();
   const dispatch = useDispatch();
   const router = useRouter();
+
   const listedName =
     pathname?.split("/").pop() === "dashboard"
       ? "Dashboard"
@@ -35,7 +36,13 @@ function Header() {
       ? "Stock Details"
       : pathname?.split("/").pop() === "buckets"
       ? "Buckets"
-      : "Affiliate";
+      : pathname.includes("user-management/edit/")
+      ? "User Management Edit"
+      : pathname.includes("superstar/edit/")
+      ? "Superstar Portfolio Edit"
+      : pathname.includes("affiliate")
+      ? "Affiliate"
+      : "";
 
   const userData = useSelector(authStore);
   const userName = userData?.userData?.user?.first_name || "User";

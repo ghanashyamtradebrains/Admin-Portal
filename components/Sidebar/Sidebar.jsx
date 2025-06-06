@@ -154,7 +154,13 @@ const Sidebar = () => {
                     if (item.hasDropdown) {
                       handleDropdownToggle(item.name);
                     } else {
-                      router.push(item.href);
+                      if (document.startViewTransition) {
+                        document.startViewTransition(() => {
+                          router.push(item.href);
+                        });
+                      } else {
+                        router.push(item.href);
+                      }
                     }
                   }}
                 >

@@ -139,3 +139,111 @@ export const postLoginData = async (data) => {
   });
   return loginResp;
 };
+
+export const getUserManagementUserList = async (searchInput) => {
+  const response = await get(
+    `/user-management/admin/${searchInput ? `?search=${searchInput}` : ""}`
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const deleteAdminStockRecommendation = async (id) => {
+  const response = await del(`/stock/recommendations/delete/${id}/`).then(
+    (resp) => {
+      return resp;
+    }
+  );
+  return response;
+};
+
+export const putUserRoleUpdate = async (data) => {
+  const response = await put(`user/type/`, data).then((resp) => {
+    return resp?.data;
+  });
+  return response;
+};
+
+export const getUserAccountStatus = async (user_id) => {
+  const response = await get(
+    `/user-management/admin/account-status/${user_id}/`
+  ).then((resp) => {
+    return resp?.data;
+  });
+  return response;
+};
+
+export const putUserManagementUserData = async (updatedData) => {
+  const response = await put(
+    `/user-management/admin/user-details/edit/`,
+    updatedData
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const putUserAccountStatus = async (data) => {
+  const response = await put(
+    `/user-management/admin/account-status/edit/`,
+    data
+  ).then((resp) => {
+    return resp?.data;
+  });
+  return response;
+};
+
+export const getUserManagementUserData = async (user_id) => {
+  const response = await get(
+    `/user-management/admin/user-details/${user_id}/`
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const getAllStockDetails = async (input) => {
+  const response = await get(
+    `stocks/about-admin-all/?${
+      input === undefined ? `&search=` : `&search=${input}`
+    }`
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const addStockToStockDetails = async (data) => {
+  const data1 = {
+    ...data,
+    research_report: "",
+  };
+  const response = await post(`stocks/about-admin/`, data1).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const getStockDetails = async (input) => {
+  const response = await get(`test-search?keyword=${input}&length=4`).then(
+    (resp) => {
+      return resp;
+    }
+  );
+  return response;
+};
+
+export const putStockToStockDetails = async (data, id) => {
+  const data1 = {
+    description: data?.description,
+    research_report: data?.research_report,
+    fincode: id,
+  };
+  const response = await put(`stocks/about-admin/?fincode=${id}`, data1).then(
+    (resp) => {
+      return resp;
+    }
+  );
+  return response;
+};

@@ -51,8 +51,6 @@ function Feedback() {
     ),
   });
 
-  console.log(Page, "PagePagePage");
-
   const getAdminSupportTableList = async () => {
     await getFeedbackDataAdmin(inputSearch, Page?.page).then((res) => {
       setTableData(res?.data);
