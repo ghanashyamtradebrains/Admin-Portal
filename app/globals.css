@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .custom-body {
-  font-family: "Helvetica Neue", sans-serif; /* example fallback */
+  font-family: "Helvetica Neue", sans-serif;
   background-color: #121212;
   color: white;
   -webkit-font-smoothing: antialiased;
@@ -233,7 +237,6 @@ body {
 
 .contact-select-dark > span {
   color: white !important;
-  /* background: var(--clr-dark-secondary) !important  ; */
 }
 .contact-select-dark > div > span {
   color: white !important;
@@ -332,4 +335,14 @@ body {
   to {
     opacity: 1;
   }
+}
+
+.rich-text-editor {
+  color: white !important;
+  background-color: #2f2f2f !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 1px 8px !important;
+  min-height: 200px !important;
+  margin-top: 20px;
 }

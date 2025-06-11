@@ -8,6 +8,7 @@ import {
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { usePathname, useRouter } from "next/navigation";
 import { ClassicEditor } from "ckeditor5-custom-build";
+import Tiptap from "../TipTapEditor/TipTapEditor";
 
 function StockDetailsForm({
   form,
@@ -123,7 +124,7 @@ function StockDetailsForm({
         name="description"
         className={` ${"dark-input-login"}`}
       >
-        <CKEditor
+        {/* <CKEditor
           editor={ClassicEditor}
           data={ekkeditor}
           onReady={(editor) => {
@@ -133,7 +134,8 @@ function StockDetailsForm({
             const data = editor.getData();
             setekkeditor(data);
           }}
-        />
+        /> */}
+        <Tiptap data={ekkeditor} />
       </Form.Item>
     </Form>
   );

@@ -134,7 +134,7 @@ function StockDetail() {
           <button className={styles.button}>Add Stock </button>
         </Link>
       </div>
-
+      <p className="bg-red-500 text-2xl">hello world</p>
       <div className={`${styles.table} ${"custom-antd-head-dark"}`}>
         <CustomTable columns={columnData} data={TableData} />
       </div>
