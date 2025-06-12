@@ -247,3 +247,151 @@ export const putStockToStockDetails = async (data, id) => {
   );
   return response;
 };
+
+export const getStockToStockDetails = async (id) => {
+  const response = await get(`stocks/about-admin/?fincode=${id}`).then(
+    (resp) => {
+      return resp;
+    }
+  );
+  return response;
+};
+
+export const getAllSignUps = async (Page, Search, dateString) => {
+  const response = await get(`/affiliate/admin/all-affiliate-signups/?page=${
+    Page.page
+  }&page_size=${Page.perPage}
+  ${Search === undefined || Search.length === 0 ? "" : `&search=${Search}`}
+  ${dateString[0] === undefined ? "" : `&min_date=${dateString[0]}`}${
+    dateString[1] === undefined ? "" : `&max_date=${dateString[1]}`
+  }
+    `).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const getAllAffiliateData = async (Page, input, dateString) => {
+  const response = await get(
+    `/affiliate/admin/overvew/?page=${Page.page}&page_size=${Page.perPage}&${
+      input !== undefined ? `&search=${input}` : ""
+    }  ${dateString !== undefined ? `&max_date=${dateString[1]}` : ""} ${
+      dateString !== undefined ? `&min_date=${dateString[0]}` : ""
+    }`
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const getAllAffiliateGraphData = async (
+  filter,
+  monthString,
+  isDateRange,
+  dateString
+) => {
+  var url = `/affiliate/admin/affilate-signup/?filter=${filter}`;
+  if (isDateRange) {
+    url = `/affiliate/admin/affilate-signup/?min_date=${filter[0].format(
+      "YYYY-MM-DD"
+    )}&max_date=${filter[1].format("YYYY-MM-DD")}`;
+  } else if (monthString) {
+    url = `/affiliate/admin/affilate-signup/?min_date=${filter.format(
+      "YYYY-MM-01"
+    )}`;
+  }
+
+  const response = await get(url).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const getOverallAffiliateSales = async (
+  Filter,
+  revenue,
+  commi,
+  earnings,
+  Page
+) => {
+  const response = await get(
+    `affiliate/admin/overall-sales/?&page=${Page.page}&perPage=${Page.perPage}${
+      Filter?.search !== undefined && Filter?.search?.length !== 0
+        ? `&search=${Filter?.search}`
+        : ""
+    }${
+      Filter?.revenue !== undefined && Filter?.revenue?.length > 0
+        ? `&${revenue}=${Filter?.revenue}`
+        : ""
+    }${
+      Filter?.earnings !== undefined && Filter?.earnings?.length > 0
+        ? `&${earnings}=${Filter?.earnings}`
+        : ""
+    }${
+      Filter?.commi !== undefined && Filter?.commi?.length > 0
+        ? `&${commi}=${Filter?.commi}`
+        : ""
+    }${
+      Filter?.mindate !== undefined && Filter?.mindate?.length > 0
+        ? `&min_date=${Filter?.mindate}`
+        : ""
+    }${
+      Filter?.maxdate !== undefined && Filter?.maxdate?.length > 0
+        ? `&max_date=${Filter?.maxdate}`
+        : ""
+    }`
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const getAdminAffiliatePayoutDetails = async () => {
+  const response = await get(`affiliate/admin/payout/`).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const updateAffiliatePayoutStatus = async (id, setSelected) => {
+  const data = {
+    status: setSelected,
+  };
+  const response = await put(`affiliate/admin/payout/set/${id}/`, data).then(
+    (resp) => {
+      return resp;
+    }
+  );
+  return response;
+};
+
+export const deleAffiliatePromotionImage = async (id) => {
+  const data = {
+    id: id,
+  };
+  const response = await delWithParams(
+    `affiliate/admin/promotion-images/`,
+    data
+  ).then((resp) => {
+    return resp;
+  });
+  return response;
+};
+
+export const getAffiliatePromotionImage = async () => {
+  const response = await get(`affiliate/admin/promotion-images/`).then(
+    (resp) => {
+      return resp;
+    }
+  );
+  return response;
+};
+
+export const postAffiliatePromotionImage = async (data) => {
+  const response = await post(`affiliate/admin/promotion-images/`, data).then(
+    (resp) => {
+      return resp;
+    }
+  );
+  return response;
+};

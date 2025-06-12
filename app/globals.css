@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.custom-body {
-  font-family: "Helvetica Neue", sans-serif;
-  background-color: #121212;
-  color: white;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 0;
-}
-
 .layout-container {
   display: flex;
   height: 100vh;
@@ -194,6 +184,13 @@ body {
   color: white !important;
 }
 
+.antd-Selete-Custom-dark
+  .ant-select-selector
+  .ant-select-selection-wrap
+  .ant-select-selection-placeholder {
+  color: white !important;
+}
+
 :where(.css-dev-only-do-not-override-5uvb3z).ant-select-outlined:not(
     .ant-select-customize-input
   )
@@ -231,7 +228,7 @@ body {
   .ant-input-status-error:not(.ant-input-disabled):not(
     .ant-input-borderless
   ).ant-input {
-  background: var(--clr-dark-secondary) !important;
+  background: #1e1e1e !important;
   color: white;
 }
 
@@ -345,4 +342,102 @@ body {
   padding: 1px 8px !important;
   min-height: 200px !important;
   margin-top: 20px;
+}
+
+.ck-editor-custom {
+  color: #fff;
+}
+
+.ck.ck-icon {
+  color: #fff !important;
+}
+
+.ck-button__label {
+  color: #fff !important;
+}
+
+.ck.ck-editor__main > .ck-editor__editable {
+  background: #2f2f2f !important;
+}
+
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  height: 300px;
+}
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  height: 200px;
+}
+
+.ck.ck-toolbar {
+  background: none !important;
+}
+
+.ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items {
+  background: #2f2f2f !important;
+}
+/* .ck.ck-button.ck-on,
+a.ck.ck-button.ck-on {
+  background: #fc00c5 !important;
+} */
+
+/* .ck-rounded-corners
+  .ck.ck-dropdown
+  .ck-dropdown__panel
+  .ck-list
+  .ck-list__item:first-child
+  .ck-button {
+  background: #1e1e1e !important;
+} */
+
+.ck-dropdown__panel {
+  background: green !important;
+}
+
+.ck-dropdown__panel .ck.ck-list {
+  background: #3b3f4f;
+}
+
+.ck-dropdown__panel .ck.ck-list .ck.ck-list__item .ck-button.ck-on {
+  background: #545e78;
+}
+
+.ck-button.ck-on :hover {
+  background: #545e78;
+}
+
+.ck-editor__editable {
+  background: none;
+}
+
+.ck-editor__editable_inline {
+  resize: vertical;
+  overflow: auto;
+  min-height: 200px;
+  max-height: 800px;
+  height: auto !important;
+}
+
+.drop-down-stock > div > div > div > div > div > div {
+  color: white !important;
+  background-color: #1e1e1e !important;
+}
+.drop-down-stock {
+  background-color: #1e1e1e !important;
+}
+.drop-down-stock
+  > div
+  > div
+  > div
+  > div
+  > div
+  > .ant-select-item-option-active {
+  background-color: #2f2f2f !important;
+}
+
+.drop-down-stock > div > div {
+  color: white;
+}
+
+.ant-dropdown-trigger {
+  color: white !important;
 }

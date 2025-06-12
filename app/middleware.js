@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export function middleware(request) {
-  const token = request.cookies.get("ptl_access_token")?.value;
+  const token = request.cookies.get("admin_access_token")?.value;
 
   const protectedRoutes = ["/dashboard", "/user-list", "/admin"];
 

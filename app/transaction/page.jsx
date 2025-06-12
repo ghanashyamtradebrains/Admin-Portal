@@ -7,7 +7,7 @@ import SelectOptions from "@/components/SelectionOption";
 import { DatePicker } from "antd";
 import CustomTable from "@/components/CustomTable";
 import CustomPagination from "@/components/CustomPagination";
-import numberWithCommas from "@/components/numberWithComma";
+import numberWithCommas from "../utility/numberWithCommas";
 
 function Transaction() {
   const { RangePicker } = DatePicker;

@@ -1,0 +1,19 @@
+.uploadButton {
+  background-color: #2f2f2f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.uploadContainer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
+  width: 100% !important;
+  gap: 10px !important;
+}

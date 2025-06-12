@@ -9,7 +9,7 @@ import cookie from "js-cookie";
 export default function AuthLayout({ children }) {
   const [hasToken, setHasToken] = useState(false);
   const pathname = usePathname();
-  const accessToken = cookie.get("ptl_access_token");
+  const accessToken = cookie.get("admin_access_token");
 
   useEffect(() => {
     setHasToken(!!accessToken);

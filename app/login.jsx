@@ -26,9 +26,11 @@ function Login() {
         }
         console.log(resp, "respresp");
 
-        cookie.set("user_data", resp?.data.user?.accountType, { expires: 999 });
-        cookie.set("login_session", "true", { expires: 999 });
-        cookie.set("ptl_access_token", resp?.data?.access_token, {
+        cookie.set("admin_user_data", resp?.data.user?.accountType, {
+          expires: 999,
+        });
+        cookie.set("admin_login_session", "true", { expires: 999 });
+        cookie.set("admin_access_token", resp?.data?.access_token, {
           expires: 999,
         });
         dispatch(setAuth(resp.data));

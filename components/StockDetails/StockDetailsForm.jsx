@@ -5,10 +5,8 @@ import {
   getStockDetails,
   putStockToStockDetails,
 } from "@/api/fetchClient";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { usePathname, useRouter } from "next/navigation";
-import { ClassicEditor } from "ckeditor5-custom-build";
-import Tiptap from "../TipTapEditor/TipTapEditor";
+import CustomEditor from "../CustomEditor";
 
 function StockDetailsForm({
   form,
@@ -23,7 +21,7 @@ function StockDetailsForm({
   const [selectedLabel, setSelectedLabel] = useState(
     (initialData && initialData?.company_name) || ""
   );
-  const [ekkeditor, setekkeditor] = useState(initialData?.description || "");
+  const [editorData, setEditorData] = useState(initialData?.description || "");
   const pathname = usePathname();
   const id = pathname.split("/").pop();
   const getResults = async (e) => {
@@ -47,15 +45,16 @@ function StockDetailsForm({
     if (initialData) {
       form.setFieldsValue(initialData);
       setSelectedLabel(initialData.company);
-      setekkeditor(initialData.description);
+      setEditorData(initialData.description);
     }
   }, [initialData]);
+
   const onSubmit = async (values) => {
     const updatedValues = {
       ...values,
       fincode: selectedLabel,
     };
-    updatedValues.description = ekkeditor;
+    updatedValues.description = editorData;
 
     if (initialData) {
       try {
@@ -91,7 +90,7 @@ function StockDetailsForm({
         className={` ${"dark-input-login"}`}
       >
         <AutoComplete
-          className={"border1px-dark-mode antd-Selete-Custom-dark  "}
+          className={"antd-Selete-Custom-dark"}
           style={{
             width: "100%",
           }}
@@ -115,27 +114,18 @@ function StockDetailsForm({
 
       <Form.Item
         label="Description"
-        rules={[
-          {
-            required: true,
-            message: "Please enter description",
-          },
-        ]}
-        name="description"
+        required
         className={` ${"dark-input-login"}`}
+        validateStatus={!editorData ? "error" : ""}
+        help={!editorData ? "Please enter description" : ""}
       >
-        {/* <CKEditor
-          editor={ClassicEditor}
-          data={ekkeditor}
-          onReady={(editor) => {
-            console.log("Editor is ready to use!", editor);
-          }}
-          onChange={(event, editor) => {
-            const data = editor.getData();
-            setekkeditor(data);
-          }}
-        /> */}
-        <Tiptap data={ekkeditor} />
+        <div className="ck-editor-custom">
+          <CustomEditor
+            data={editorData}
+            setData={setEditorData}
+            onChange={setEditorData}
+          />
+        </div>
       </Form.Item>
     </Form>
   );

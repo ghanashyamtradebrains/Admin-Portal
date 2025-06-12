@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const router = useRouter();
-  const accessToken = cookie.get("ptl_access_token");
+  const accessToken = cookie.get("admin_access_token");
   if (accessToken) {
     router.push("/dashboard");
   }

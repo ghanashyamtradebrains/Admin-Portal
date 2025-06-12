@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "antd";
 import StockDetailsForm from "@/components/StockDetails/StockDetailsForm";
+import styles from "./create.module.css";
 
 function AddStockDetails() {
   const [form] = Form.useForm();
@@ -21,7 +22,7 @@ function AddStockDetails() {
       <div className="d-flex justify-content-end">
         <button
           type="primary"
-          className=" btn-bg-primary  mb-10 p-10 h-45 fw-500 br-5 text-white"
+          className={styles.submitButton}
           onClick={() => form.submit()}
         >
           Submit Details

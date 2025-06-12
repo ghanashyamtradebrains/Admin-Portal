@@ -102,13 +102,14 @@ function StockDetail() {
                 fontSize: "14px",
                 fontWeight: "400",
                 color: "white",
+                cursor: "pointer",
               }}
             >
               <div
                 hr
                 onClick={() => {
                   handleEditClick(record.FINCODE);
-                  router.push(`/stock-details`);
+                  router.push(`/stock-details/edit/${record.FINCODE}`);
                 }}
               >
                 <EditOutlined />
@@ -134,7 +135,7 @@ function StockDetail() {
           <button className={styles.button}>Add Stock </button>
         </Link>
       </div>
-      <p className="bg-red-500 text-2xl">hello world</p>
+
       <div className={`${styles.table} ${"custom-antd-head-dark"}`}>
         <CustomTable columns={columnData} data={TableData} />
       </div>

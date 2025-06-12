@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 
 export const getHeader = async () => {
-  const storeData = Cookies.get("ptl_access_token");
+  const storeData = Cookies.get("admin_access_token");
   if (storeData) {
     return {
       headers: {

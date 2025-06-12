@@ -42,19 +42,25 @@ function Header() {
       ? "Superstar Portfolio Edit"
       : pathname.includes("affiliate")
       ? "Affiliate"
+      : pathname.includes("stock-details/create")
+      ? "Stock Details Create"
+      : pathname.includes("stock-details/edit")
+      ? "Stock Details Edit"
       : "";
 
   const userData = useSelector(authStore);
   const userName = userData?.userData?.user?.first_name || "User";
+
+  console.log(userData, "userData");
 
   const getRandomColor = () =>
     `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
   const userLogout = () => {
     router.push("/");
-    Cookies.remove("ptl_access_token");
-    Cookies.remove("login_session");
-    Cookies.remove("user_data");
+    Cookies.remove("admin_access_token");
+    Cookies.remove("admin_login_session");
+    Cookies.remove("admin_user_data");
     dispatch(setAuth({}));
   };
 

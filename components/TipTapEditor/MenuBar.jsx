@@ -90,7 +90,7 @@ const MenuBar = ({ editor }) => {
   ];
 
   return (
-    <div className="border rounded-md p-1 mb-1 bg-slate-50 space-x-2 z-50">
+    <div className="border-slate-700 rounded-md p-1 mb-1 bg-[#2f2f2f] space-x-2 text-white ">
       {Options.map((option, index) => (
         <Toggle key={index} preesed={option.preesed} onClick={option.onClick}>
           {option.icon}
